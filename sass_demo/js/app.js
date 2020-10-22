@@ -67,27 +67,27 @@ var knyguKatalogas =
 		 	"IlgosKnygos":[
 			 	{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2018,
+					"Leidimo Metai": 2018,
 					Pavadinimas: "Mano mintys debesyse",
-					PuslapiuSkaicius: 300
+					"Puslapiu Skaicius": 300
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2001,
+					"Leidimo Metai": 2001,
 					Pavadinimas: "Mano mintys po vandeniu",
-					PuslapiuSkaicius: 359
+					"Puslapiu Skaicius": 359
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1984,
+					"Leidimo Metai": 1984,
 					Pavadinimas: "Mano mintys kitam kambaryje",
-					PuslapiuSkaicius: 367
+					"Puslapiu Skaicius": 367
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1928,
+					"Leidimo Metai": 1928,
 					Pavadinimas: "Mano mintys vogtos",
-					PuslapiuSkaicius: 500
+					"Puslapiu Skaicius": 500
 				}
 			]
 		},
@@ -95,27 +95,27 @@ var knyguKatalogas =
 			"TrumposKnygos":[
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2001,
+					"Leidimo Metai": 2001,
 					Pavadinimas: "Mano mintys debesyse",
-					PuslapiuSkaicius: 120
+					"Puslapiu Skaicius": 120
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1928,
+					"Leidimo Metai": 1928,
 					Pavadinimas: "Mano mintys po vandeniu2",
-					PuslapiuSkaicius: 85
+					"Puslapiu Skaicius": 85
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2018,
+					"Leidimo Metai": 2018,
 					Pavadinimas: "Mano mintys kitam kambaryje2",
-					PuslapiuSkaicius: 200
+					"Puslapiu Skaicius": 200
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1984,
+					"Leidimo Metai": 1984,
 					Pavadinimas: "Mano mintys vogtos2",
-					PuslapiuSkaicius: 115
+					"Puslapiu Skaicius": 115
 				}
 			]
 		},
@@ -124,27 +124,27 @@ var knyguKatalogas =
 			[
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1984,
+					"Leidimo Metai": 1984,
 					Pavadinimas: "Mano mintys debesyse audio",
-					PuslapiuSkaicius: 300
+					"Puslapiu Skaicius": 300
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2018,
+					"Leidimo Metai": 2018,
 					Pavadinimas: "Mano mintys debesyse audio ",
-					PuslapiuSkaicius: 300
+					"Puslapiu Skaicius": 300
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 1928,
+					"Leidimo Metai": 1928,
 					Pavadinimas: "Mano mintys debesyse audio",
-					PuslapiuSkaicius: 300
+					"Puslapiu Skaicius": 300
 				},
 				{
 					ISBN: "GR1236K",
-					LeidimoMetai: 2001,
+					"Leidimo Metai": 2001,
 					Pavadinimas: "Mano mintys debesyse audio",
-					PuslapiuSkaicius: 300
+					"Puslapiu Skaicius": 300
 				}
 		
 			]
@@ -152,7 +152,7 @@ var knyguKatalogas =
 ];
 
 
-for(let item in knyguKatalogas){
+/*for(let item in knyguKatalogas){
 
 	for(let category in knyguKatalogas[item]){
 		console.log(category+":");
@@ -167,4 +167,29 @@ for(let item in knyguKatalogas){
 			}
 		}
 	}
+}*/
+
+for(var object in knyguKatalogas){
+
+	for(var category in knyguKatalogas[object]){
+		console.log(category+" ("+knyguKatalogas[object][category].length+" knygos)");
+
+		for(var book in knyguKatalogas[object][category]){
+
+
+			for(var bookInfo in knyguKatalogas[object][category][book]){
+
+				if(knyguKatalogas[object][category][book][bookInfo]>=2018){
+					console.log(" "+bookInfo+": "+knyguKatalogas[object][category][book][bookInfo]+" (Nauja knyga(Beveik...))");
+				}else{
+					console.log(" "+bookInfo+": "+knyguKatalogas[object][category][book][bookInfo]);
+				}
+			}
+			console.log("");
+		}
+		console.log("----------------------------------");
+	}
 }
+
+
+
