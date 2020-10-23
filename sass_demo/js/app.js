@@ -152,17 +152,6 @@ var knyguKatalogas =
 ];
 
 
-/*for(let item in knyguKatalogas){
-	for(let category in knyguKatalogas[item]){
-		console.log(category+":");
-		for(let knyga in knyguKatalogas[item][category]){
-			console.log("knyga nr: "+knyga);
-			for(let knygosInfo in knyguKatalogas[item][category][knyga]){
-				console.log(knygosInfo+ " " + knyguKatalogas[item][category][knyga][knygosInfo]);
-			}
-		}
-	}
-}*/
 
 for(var object in knyguKatalogas){
 
@@ -177,7 +166,7 @@ for(var object in knyguKatalogas){
 				if(bookInfo == "Leidimo Metai" && knyguKatalogas[object][category][book][bookInfo]>=2018){
 					console.log(" "+bookInfo+": "+knyguKatalogas[object][category][book][bookInfo]+" (Nauja knyga(Beveik...))");
 				}else{
-					console.log(" "+bookInfo+": "+knyguKatalogas[object][category][book][bookInfo]);
+					console.log(" "+bookInfo+": "+knyguKatalogas[object][category][book][bookInfo]); //bookInfo raktas(key) katalogas[bookInfo]-indexas, grazins katalogo item is dabartinio bookInfo index
 				}
 			}
 			console.log("");
@@ -185,6 +174,7 @@ for(var object in knyguKatalogas){
 		console.log("----------------------------------");
 	}
 }
+
 
 
 /*for(kateg of knyguKatalogas){
